@@ -1,0 +1,11 @@
+Composite: When Open site Login Page
+Given I am on main application page
+When I wait until element located by `caseSensitiveText(Swag Labs)` appears
+Then `${current-page-url}` is equal to `https://www.saucedemo.com/`
+
+Composite: When I fill `$userName`, `$password` in registration form and submit
+When I enter `<userName>` in field located by `xpath(//input[@id="user-name"])`
+When I enter `<password>` in field located by `xpath(//input[@id="password"])`
+When I click on element located by `xpath(//input[@id="login-button"])`
+When I COMPARE_AGAINST baseline with name `homepage`
+
